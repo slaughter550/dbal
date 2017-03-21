@@ -179,6 +179,7 @@ class MySqlSchemaManager extends AbstractSchemaManager
         $length = ((int) $length == 0) ? null : (int) $length;
 
         $options = array(
+            'rawType' .     => $tableColumn['type'],
             'length'        => $length,
             'unsigned'      => (bool) (strpos($tableColumn['type'], 'unsigned') !== false),
             'fixed'         => (bool) $fixed,
